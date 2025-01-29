@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "@repo/ui": "*",
+    "@types/recoil": "^0.0.1",
     "next": "^15.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+     "@repo/store" : "*"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
@@ -22,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "@repo/store" : "*"
   }
 }
