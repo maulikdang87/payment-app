@@ -1,18 +1,11 @@
 import { Card } from "@repo/ui/Card"
-// import  OnRampStatus from "@repo/db/client"
-
-// export enum OnRampStatus {
-//     Success,
-//     Failure,
-//     Processing
-// }
 
 interface TransactionProps {
     transactions: {
         id : string,
         time: Date,
         amount: number,
-        status: any ,
+        status: string ,
         provider: string
     }[]
 }
@@ -42,7 +35,7 @@ export const OnRampTransactions = ({
                     </div>
                 </div>
                 {
-                    t.status == "Success" ? (<div className="flex flex-col justify-center text-green-500">
+                    t.status == "Success"? (<div className="flex flex-col justify-center text-green-500">
                         + Rs {t.amount / 100}
                     </div>) : 
                    ( t.status == "Processing" ? <div className="flex flex-col justify-center text-amber-500">
