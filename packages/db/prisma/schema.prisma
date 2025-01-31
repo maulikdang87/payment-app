@@ -9,13 +9,15 @@ datasource db {
 }
 
 model User {
-  id                String               @id @default(uuid())
-  email             String?             @unique
+  id                String                @id @default(uuid())
+  email             String?               @unique
   name              String?
-  phone            String              @unique
+  phone             String                @unique
   password          String
   OnRampTransaction OnRampTransaction[]
   Balance           Balance[]
+  sentTransfers     p2pTransactions[]     @relation(name: "FromUserRelation") 
+  receivedTransfers p2pTransactions[]     @relation(name: "ToUserRelation")
 }
 
 model Merchant {
@@ -42,6 +44,16 @@ model Balance {
   amount Int
   locked Int
   user   User @relation(fields: [userId], references: [id])
+}
+
+model p2pTransactions {
+  id Int @id @default(autoincrement())
+  amount Int
+  timeStamp DateTime
+  fromUserId String
+  fromUser User @relation(name : "FromUserRelation" ,fields: [fromUserId], references: [id])
+  toUserId String
+  toUser User @relation(name : "ToUserRelation" ,fields: [toUserId], references: [id])
 }
 
 enum AuthType {

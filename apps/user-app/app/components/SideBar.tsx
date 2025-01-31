@@ -46,6 +46,7 @@ const SideBar = () => {
                 <SideBarItem href={"/dashboard"} title={"Dashboard"} icon = {<HomeIcon/>} width={width}></SideBarItem>
                 <SideBarItem href={"/transaction"} title={"Transactions"} icon = {<TransactionsIcon/>} width={width}></SideBarItem>
                 <SideBarItem href={"/transfer"} title={"Transfer"} icon = {<TransferIcon/>} width={width}></SideBarItem>
+                <SideBarItem href={"/p2p"} title={"P2P Transfer"} icon = {<P2Picon/>} width={width}></SideBarItem>
             </div>
         </div>
 
@@ -87,7 +88,12 @@ function HomeIcon() {
     return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
   </svg>
-  
-  
-}
+  }
+
+  function P2Picon(){
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+    <path fillRule="evenodd" d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" clipRule="evenodd" />
+  </svg>
+   
+  }
   

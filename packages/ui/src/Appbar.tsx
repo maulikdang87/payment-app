@@ -19,7 +19,7 @@ export const Appbar = ({
 
     return <div className="flex justify-between border px-6 py-4 border-slate-300">
         <div className="text-2xl flex flex-col justify-center">
-            PayTM
+            PayWall
         </div>
         <div className="flex flex-col justify-center">
             <Button onclick={user ? onSignout : onSignin}>{user ? "Logout" : "Login"}</Button>

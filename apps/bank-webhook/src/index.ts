@@ -2,6 +2,7 @@ import prisma from "@repo/db/client";
 import express from "express";
 
 const app = express();
+app.use(express.json());
 
 
 app.post("/hdfc-webhook" , async  (req,res)=>{
@@ -9,7 +10,7 @@ app.post("/hdfc-webhook" , async  (req,res)=>{
     const paymentInfo = {
         token : req.body.token,
         userId : req.body.user_identifier,
-        amount : req.body.amount
+        amount : parseInt(req.body.amount)
     }
 
     try {
